@@ -4,6 +4,7 @@ import studentRoutes from './routes/studentRoutes.js';
 import orderRouter from './routes/orderRouter.js';
 
 const app = express();
+app.use(express.json());
 
 app.use('/students', studentRoutes);
 // app.use('/employees', empRouters);
