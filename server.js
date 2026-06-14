@@ -2,6 +2,7 @@ import express from 'express';
 import studentRoutes from './routes/studentRoutes.js';
 // import empRouters from './routes/empRouters.js';
 import orderRouter from './routes/orderRouter.js';
+import multerRouter from './routes/multerRouter.js';
 
 const app = express();
 app.use(express.json());
@@ -9,6 +10,9 @@ app.use(express.json());
 app.use('/students', studentRoutes);
 // app.use('/employees', empRouters);
 app.use('/order', orderRouter);
+
+// Multer - image(File) Upload
+app.use('/multer', multerRouter);
 
 app.listen(3200, () => {
     console.log('Server running on port http://localhost:3200');
