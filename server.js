@@ -3,6 +3,7 @@ import studentRoutes from './routes/studentRoutes.js';
 // import empRouters from './routes/empRouters.js';
 import orderRouter from './routes/orderRouter.js';
 import multerRouter from './routes/multerRouter.js';
+import loanRouter from './routes/loanRouter.js';
 
 const app = express();
 app.use(express.json());
@@ -13,6 +14,9 @@ app.use('/order', orderRouter);
 
 // Multer - image(File) Upload
 app.use('/multer', multerRouter);
+
+// Loan - Get Loan
+app.use('/loan', loanRouter);
 
 app.listen(3200, () => {
     console.log('Server running on port http://localhost:3200');
