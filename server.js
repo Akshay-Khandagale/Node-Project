@@ -4,9 +4,15 @@ import studentRoutes from './routes/studentRoutes.js';
 import orderRouter from './routes/orderRouter.js';
 import multerRouter from './routes/multerRouter.js';
 import loanRouter from './routes/loanRouter.js';
+import crudapi from './routes/crud_api.js';
 
 const app = express();
+
+
+app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 
 app.use('/students', studentRoutes);
 // app.use('/employees', empRouters);
@@ -17,6 +23,9 @@ app.use('/multer', multerRouter);
 
 // Loan - Get Loan
 app.use('/loan', loanRouter);
+
+// crud api
+app.use("/", crudapi);
 
 app.listen(3200, () => {
     console.log('Server running on port http://localhost:3200');
